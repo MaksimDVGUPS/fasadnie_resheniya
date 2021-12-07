@@ -168,6 +168,39 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+$('.photo-slider__container').slick({
+    arrows: true,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1
+});
+
+$('.profile__slider').slick({
+    arrows: true,
+    infinite: true,
+    slidesToShow: 7,
+    slidesToScroll: 1
+});
+
+$('.certificates__slider').slick({
+    arrows: false,
+    autoplay: true,
+    dots: true,
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1
+});
+
+$('.partners__slider').slick({
+    arrows: false,
+    autoplay: true,
+    dots: true,
+    rows: 2,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1
+});
+
 // Отображение ошибки в форме
 function createFormError (text, where) {
     const error = document.createElement('div')

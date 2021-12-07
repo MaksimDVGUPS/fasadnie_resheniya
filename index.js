@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log(1)
+
     // Ленивая загрузка
     yall()
 
@@ -125,39 +127,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    // Переключение вкладок с вариантами остекления
-    const tabs = document.querySelectorAll('.variants__tab')
-    const technologies = document.querySelectorAll('.technology')
-
-    for(const tabEl of tabs) {
-        tabEl.addEventListener('click', () => {
-            for(const tab of tabs) {
-                tab.classList.remove('variants__tab-active')
-            }
-            tabEl.classList.add('variants__tab-active')
-            for (const technology of technologies) {
-                technology.classList.remove('technology-active')
-                if(tabEl.id === technology.id) {
-                    technology.classList.add('technology-active')
-                }
-            }
-        })
-    }
-
     // Скачивание прайс-листа
     const priceButton = document.querySelector('.pricelist__button')
 
     priceButton.addEventListener('click', () => {
         const link = document.createElement('a');
-        link.setAttribute('href', 'price.pdf'); 
+        link.setAttribute('href', 'price.pdf');
         link.setAttribute('download', 'Прайс-лист');
         link.setAttribute('target','_blank');
         link.style.display = 'none';
-        document.body.appendChild(link); 
-        link.click(); 
+        document.body.appendChild(link);
+        link.click();
         document.body.removeChild(link);
     })
 })
+
+// Слайдер с фотографиями
+// $('.photo-slider__container').slick({
+//     arrows: true,
+//     infinite: true,
+//     slidesToShow: 4,
+//     slidesToScroll: 1
+// });
+//
+// $(document).ready(function () {
+//     console.log(1)
+// })
 
 // Отображение ошибки в форме
 function createFormError (text, where) {
